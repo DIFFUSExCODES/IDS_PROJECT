@@ -1,74 +1,115 @@
-# Data Project Template
+Machine Learning Based Intrusion Detection System
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
+Overview
 
-## Cookiecutter Data Science
-This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
+This project implements a Machine Learning-based Intrusion Detection System (IDS) for network security using the NSL-KDD dataset. The objective is to detect malicious network activity by distinguishing normal traffic from network attacks and to evaluate the performance of different machine learning algorithms on a standardized benchmark dataset.
 
-## Adjusting .gitignore
+The project follows a structured machine learning workflow that includes data exploration, preprocessing, model development, performance evaluation, and comparative analysis. In later stages, the project will be extended with model explainability techniques and a web-based interface for interactive predictions.
 
-Ensure you adjust the `.gitignore` file according to your project needs. For example, since this is a template, the `/data/` folder is commented out and data will not be exlucded from source control:
+Objectives
 
-```plaintext
-# exclude data from source control by default
-# /data/
-```
+* Perform exploratory data analysis on the NSL-KDD dataset.
+* Preprocess network traffic data for machine learning.
+* Build a binary intrusion detection model to classify network traffic as either normal or malicious.
+* Compare the performance of multiple machine learning algorithms.
+* Analyze model performance using standard classification metrics.
+* Extend the project with explainability and deployment features.
 
-Typically, you want to exclude this folder if it contains either sensitive data that you do not want to add to version control or large files.
+Dataset
 
-## Duplicating the .env File
-To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
+The project uses the NSL-KDD dataset, an improved version of the KDD Cup 1999 dataset designed for evaluating intrusion detection systems. The dataset removes many redundant records present in the original dataset while maintaining a diverse collection of normal and malicious network traffic.
 
-```bash
-cp .env.example .env # Linux, macOS, Git Bash, WSL
-copy .env.example .env # Windows Command Prompt
-```
+Training and testing are performed using the official NSL-KDD train-test split.
 
-This command creates a copy of `.env.example` and names it `.env`, allowing you to configure your environment variables specific to your setup.
+Machine Learning Models
 
+The following models are implemented and evaluated:
 
-## Project Organization
+* Logistic Regression
+* Decision Tree
+* Random Forest
+* XGBoost
+* LightGBM
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── README.md          <- The top-level README for developers using this project
+Additional models may be included as the project progresses.
+
+Evaluation Metrics
+
+Model performance is evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
+
+Future versions will also include:
+
+* ROC-AUC
+* Precision-Recall Curve
+* Cross Validation
+* Feature Importance Analysis
+* SHAP Explainability
+
+Project Structure
+
+.
 ├── data
-│   ├── external       <- Data from third party sources
-│   ├── interim        <- Intermediate data that has been transformed
-│   ├── processed      <- The final, canonical data sets for modeling
-│   └── raw            <- The original, immutable data dump
+│   ├── external
+│   ├── interim
+│   ├── processed
+│   └── raw
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`
+├── notebooks
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials
+├── references
 │
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── reports
+│   └── figures
 │
-└── src                         <- Source code for this project
-    │
-    ├── __init__.py             <- Makes src a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    │    
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    ├── plots.py                <- Code to create visualizations 
-    │
-    └── services                <- Service classes to connect with external platforms, tools, or APIs
-        └── __init__.py 
-```
+├── src
+│   ├── modeling
+│   ├── dataset.py
+│   ├── features.py
+│   ├── plots.py
+│   └── config.py
+│
+├── README.md
+└── LICENSE
+
+Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* XGBoost
+* LightGBM
+* Matplotlib
+* Jupyter Notebook
+
+Current Status
+
+The project is under active development.
+
+Completed:
+
+* Dataset collection
+* Exploratory Data Analysis
+* Data preprocessing
+* Binary classification pipeline
+* Initial model comparison
+
+Planned:
+
+* Hyperparameter optimization
+* Explainable AI using SHAP
+* Multi-class intrusion detection
+* Flask-based web application
+* Research paper and project report
+
+License
+
+This project is intended for academic and educational purposes.
