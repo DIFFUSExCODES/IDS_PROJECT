@@ -1,0 +1,5 @@
+Model,Cross Validation F1
+Decision Tree,0.9984
+Random Forest,0.9989
+XGBoost,0.999
+LightGBM,0.9993
